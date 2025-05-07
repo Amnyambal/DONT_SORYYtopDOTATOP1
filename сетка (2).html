@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grozny! Турнир чемпионата мира </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            padding: 20px;
+            overflow-x: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .tournament-grid {
+            display: flex;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        .round {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            position: relative;
+            padding: 0 40px;
+        }
+
+        .round-title {
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: #aaa;
+            margin-bottom: 10px;
+            position: sticky;
+            top: 0;
+            background: #1a1a1a;
+            z-index: 2;
+        }
+
+        .match-container {
+            position: relative;
+            margin: 15px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .match {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .player {
+            background: #2a2a2a;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-size: 14px;
+            min-width: 140px;
+            position: relative;
+        }
+
+        .player:nth-child(1) {
+            border-left: 3px solid #4CAF50;
+        }
+
+        .player:nth-child(2) {
+            border-left: 3px solid #F44336;
+        }
+
+        /* Соединительные линии - горизонтальные */
+        .match-container::before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            width: 40px;
+            height: 2px;
+            background: #444;
+            top: 50%;
+            z-index: 0;
+        }
+
+        /* Соединительные линии - вертикальные */
+        .match-container::after {
+            content: '';
+            position: absolute;
+            left: -40px;
+            height: 100%;
+            width: 2px;
+            background: #444;
+            top: 0;
+            z-index: 0;
+        }
+
+        /* Убираем лишние вертикальные линии */
+        .match-container:first-child::after,
+        .match-container:last-child::after {
+            display: none;
+        }
+
+        /* Особые стили для финала */
+        .final .player {
+            font-size: 16px;
+            font-weight: 500;
+            padding: 12px 20px;
+            background: #333;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 1200px) {
+            .round {
+                padding: 0 30px;
+            }
+            .player {
+                min-width: 120px;
+                font-size: 13px;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Турнир GROZNY ЫЫЫЫ</h1>
+    
+    <div class="tournament-grid">
+        <!-- 1/32 финала -->
+        <div class="round">
+            <div class="round-title">Перви тур</div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">Batalov</div>
+                    <div class="player">Chopka</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">Agressor</div>
+                    <div class="player">Sado</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">Maloy</div>
+                    <div class="player">Kenshi</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">Batukaev</div>
+                    <div class="player">Axma</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">Lord</div>
+                    <div class="player">Kaspiy</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">Dont_Sorry Топ</div>
+                    <div class="player">Xam</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">Hiro</div>
+                    <div class="player">Didiev</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">Razmik</div>
+                    <div class="player">Mamura</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">Malik</div>
+                    <div class="player">Sonik</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">Batya</div>
+                    <div class="player">Hanpash</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">Ibrem</div>
+                    <div class="player">Haha</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">Ibrahim</div>
+                    <div class="player">Kosma</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">Mokhmad</div>
+                    <div class="player">Ali</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">Predator</div>
+                    <div class="player">Axma For</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">Berserk</div>
+                    <div class="player">Letviks</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">Musa</div>
+                    <div class="player">Delord</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 1/16 финала -->
+        <div class="round">
+            <div class="round-title">1/16 финала</div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">—</div>
+                    <div class="player">—</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">—</div>
+                    <div class="player">—</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">—</div>
+                    <div class="player">—</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">—</div>
+                    <div class="player">—</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">—</div>
+                    <div class="player">—</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">—</div>
+                    <div class="player">—</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">—</div>
+                    <div class="player">—</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">—</div>
+                    <div class="player">—</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 1/8 финала -->
+        <div class="round">
+            <div class="round-title">1/8 финала</div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">—</div>
+                    <div class="player">—</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">—</div>
+                    <div class="player">—</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">—</div>
+                    <div class="player">—</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">—</div>
+                    <div class="player">—</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 1/4 финала -->
+        <div class="round">
+            <div class="round-title">1/4 финала</div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">—</div>
+                    <div class="player">—</div>
+                </div>
+            </div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">—</div>
+                    <div class="player">—</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 1/2 финала -->
+        <div class="round">
+            <div class="round-title">1/2 финала</div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">—</div>
+                    <div class="player">—</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Финал -->
+        <div class="round final">
+            <div class="round-title">Финал</div>
+            
+            <div class="match-container">
+                <div class="match">
+                    <div class="player">—</div>
+                    <div class="player">—</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
